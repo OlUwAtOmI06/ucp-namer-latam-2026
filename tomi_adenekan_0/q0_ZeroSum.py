@@ -1,3 +1,10 @@
+"""
+Time Cmplexity = O(n)
+Space Complexity = O(n)
+Time used = 40 minutes
+
+"""
+
 def main(array):
     array.sort()
     dic = {}
