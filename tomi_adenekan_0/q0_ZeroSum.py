@@ -6,7 +6,6 @@ Time used = 40 minutes
 """
 
 def main(array):
-    array.sort()
     dic = {}
     for each in array:
         if each in dic:
@@ -15,10 +14,17 @@ def main(array):
             dic[each] = 1
     res = 0
     for key, value in dic.items():
-        if -key in dic and dic[key] == dic[-key]:
-            res += (0.5  * value)
+        if  key > 0 and -key in dic:
+            val = min(value, dic[-key])
+            res += val
 
-    return int(res)
+    return res
+
+lst = [1, 10, 8, -2, 2, 5, 7, 2, -2, -1]
+print(main(lst))
 
 lst = [1, 10, 8, 3, 2, 5, 7, 2, -2, -1]
 print(main(lst))
+
+
+dic = {-1:,1, -2:1, 1;1, 2:2, 3:1, 5:1, 7:1, 8:1, 10:1}
