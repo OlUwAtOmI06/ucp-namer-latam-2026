@@ -1,19 +1,18 @@
-def factorial(n):
-    if n < 0:
-        return None
-    if n == 0 or n == 1:
-        return 1
-    return  n * factorial(n-1)
+
 
 def main(num):
-    res = []
-    for i in range(num+1):
-        first = factorial(i * 2)
-        second = factorial(i+1)
-        third = factorial(i)
-        val = first //(second * third)
-        res.append(val)
+    if num < 0:
+        return 0
 
-    return res
+    if num <= 1:
+        return 0
 
+    total = 0
+
+    for i in range(1, num+1):
+        left = main(i-1)
+        right = main(n-i)
+        total += (left * right)
+    return total
+                    
 print(main(1))
